@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Tracker</title>
+    <link rel="stylesheet" href="crypto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 Crypto Price Tracker</h1>
+            <div class="header-controls">
+                <select id="currency-selector">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="btc">BTC</option>
+                </select>
+                <button id="refresh-btn" class="btn">Refresh</button>
+                <button id="theme-toggle" class="btn">🌙</button>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search cryptocurrencies..." />
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading cryptocurrency data...</p>
+        </div>
+
+        <div class="error-message" id="error-message" style="display: none;">
+            <p id="error-text"></p>
+            <button id="retry-btn" class="btn">Retry</button>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Market Cap</h3>
+                <p id="total-market-cap">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <h3>24h Volume</h3>
+                <p id="total-volume">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <h3>BTC Dominance</h3>
+                <p id="btc-dominance">Loading...</p>
+            </div>
+        </div>
+
+        <div class="crypto-table-container">
+            <table class="crypto-table" id="crypto-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>24h %</th>
+                        <th>Market Cap</th>
+                        <th>Volume</th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody id="crypto-tbody">
+                    <!-- Dynamic content will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button id="prev-btn" class="btn" disabled>Previous</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" class="btn">Next</button>
+        </div>
+    </div>
+
+    <script src="crypto.js"></script>
+</body>
+</html>
